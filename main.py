@@ -6,15 +6,17 @@ r = requests.get("https://drgapi.com/v1/deepdives")
 data = r.json()
 variants = data["variants"]
 
-
-url = "https://discord.com/api/webhooks/1181114522203852800/u60JLs9m5QxNPFZzq-1C4maRJPrtpSWuqgY9jtwDbk4Zg6eroap1yObcnwFb4MpYKHFk"
+# Change this out for your webhook url
+url = "put_webhook_url_here"
 
 
 webhook = DiscordWebhook(url=url)
 
+# replace (your_role_id_here) with the role id of the role you want to be mentioned when used.
+
 embed = DiscordEmbed(
   title="Deep Dive Information", 
-  description="<@&1182436710085300245> New Deep Dive just dropped.",
+  description="<@&(your_role_id_here)> New Deep Dive just dropped.",
   color = "d4af37"
 )
 
@@ -29,7 +31,6 @@ embed.add_embed_field(
   {variants[0]["biome"]}''',
   
   value=f"""
-  \n
   > **Stage {variants[0]["stages"][0]["id"]}**
   > Primary Objective: {dd_stage[0]["primary"]}
   > Secondary Objective: {dd_stage[0]["secondary"]}
