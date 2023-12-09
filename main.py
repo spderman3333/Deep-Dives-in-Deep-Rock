@@ -7,16 +7,18 @@ data = r.json()
 variants = data["variants"]
 
 # Change this out for your webhook url
+# replace (your_role_id_here) with the role id of the role you want to be mentioned when used.
 url = "put_webhook_url_here"
+role_id = "your_role_id_here"
 
 
 webhook = DiscordWebhook(url=url)
 
-# replace (your_role_id_here) with the role id of the role you want to be mentioned when used.
+
 
 embed = DiscordEmbed(
   title="Deep Dive Information", 
-  description="<@&(your_role_id_here)> New Deep Dive just dropped.",
+  description=f"<@&{role_id}> New Deep Dive just dropped.",
   color = "d4af37"
 )
 
