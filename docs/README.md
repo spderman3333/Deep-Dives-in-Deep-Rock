@@ -3,9 +3,9 @@
 A neat little program for sending deep dive information to a webhook on discord.
 
 ## Important
-Set the url string on line 11 in main.py to whatever url your webhook is.
+Set the url string on line 15 in main.py to whatever url your webhook is.
 
-Set role_id to the id of the role you want mentioned in discord.
+Set role_id (line 17) to the id of the role you want mentioned in discord.
 
 ## Other
 You should probably fork it.
